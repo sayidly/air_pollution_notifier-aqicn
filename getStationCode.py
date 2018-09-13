@@ -9,12 +9,12 @@ def showCityInfo(response):
 
 
 def getInput(response, token):
-    inputNum  = input('请输入数字: ')
+    inputNum  = input("请输入数字: ")
     print(inputNum)
 
     try:
-        number = int(inputNum)
-        
+        rawNum = int(inputNum)
+        number = rawNum - 1
         if number in range(len(response)):
             print('yes')
             print(type(response[number]))
@@ -30,9 +30,10 @@ def getInput(response, token):
     except ValueError:
         print("你输入的不是整数")
         getInput(response, token)
-    
-    
 
+    print('使用愉快！')
+    
+    
 def getJSON(token, city):
     print(token)
     print(city)
