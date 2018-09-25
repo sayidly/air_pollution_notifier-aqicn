@@ -1,4 +1,5 @@
 import requests
+import json
 
 token = '2d20b5f834a90f9a1af1463bc9114a477f96a50c'
 city = 'shanghai'
@@ -20,8 +21,13 @@ def getInput(response, token):
             print(type(response[number]))
             print(response[number])
         
-            stationCode = response[number-1]['uid']
+            stationCode = response[number]['uid']
             print("请在 config.json 文件中，把 stationCode 修改为" + str(stationCode))
+            print('使用愉快！')
+            
+            # write in json file
+            with open('data.json', 'w') as outfile:
+                json.dump(stationCode, outfile)
 
         else:
             print('你输入的数字不在列表中')
@@ -31,7 +37,6 @@ def getInput(response, token):
         print("你输入的不是整数")
         getInput(response, token)
 
-    print('使用愉快！')
     
     
 def getJSON(token, city):
