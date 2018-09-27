@@ -1,0 +1,17 @@
+{
+	"city": "Shanghai",
+	"stationCode": "1437",
+	"aqicnToken": "2d20b5f834a90f9a1af1463bc9114a477f96a50c",
+	"serverChanKey_Justme": "2474-b96b09b506ba15b1a64a3f8ac29bd49c",
+	"serverChanKey_Group":"2352-4a232a80d7b0ceef8e185d9aa5cbb44f",
+	"scheduleTime": {
+		"days": [0, 1, 2, 3, 4, 5, 6],
+		"hours": [8, 18, 21],
+		"minutes": [20]
+	},
+	"conditions": {
+		"aqi_high": 150,
+		"aqi_low": 100
+	}
+}
+

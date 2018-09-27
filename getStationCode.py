@@ -25,7 +25,7 @@ def getInput(response, token):
             print("请在 config.json 文件中，把 stationCode 修改为" + str(stationCode))
             print('使用愉快！')
             
-            # write in json file
+            # write into json file
             with open('data.json', 'w') as outfile:
                 json.dump(stationCode, outfile)
 
