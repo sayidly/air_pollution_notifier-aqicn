@@ -2,7 +2,7 @@ import requests
 import json
 
 token = '2d20b5f834a90f9a1af1463bc9114a477f96a50c'
-city = 'shanghai'
+city = 'beijing'
 
 def showCityInfo(response):
     for cityNum in range(len(response)):
