@@ -10,28 +10,32 @@ with open('config.json') as config:
 with open('info.json') as info:
     info_json = json.load(info)
 
+
 def getStationJSON():
     idx = config_json['stationCode']
     token = config_json['aqicnToken']
     print(idx)
     print(token)
-    station_URL = "http://api.waqi.info/feed/@%(idx)s/?token=%(token)s" % {'idx': idx, 'token': token}
+    station_URL = "http://api.waqi.info/feed/@%(idx)s/?token=%(token)s" % {
+        'idx': idx, 'token': token}
     print(station_URL)
     response_city = getData(station_URL)
     print(response_city)
     result = processData(response_city)
     return result
-    #print(result)
-    #await self.prepareContent(result)
+    # print(result)
+    # await self.prepareContent(result)
+
 
 def getData(url):
     try:
         response = requests.get(url)
         response_Station = response.json()
-        #print(response_Station['data'])
+        # print(response_Station['data'])
         return response_Station
     except error:
         print(error)
+
 
 def processData(response):
     data = response["data"]
@@ -66,13 +70,12 @@ def processData(response):
             level = 0
         levelInfo = {}
         levelInfo['value'] = level
-        levelInfo['name'] = info_json['level'][level]['name'] 
-        levelInfo['implication'] = info_json['level'][level]['implication'] 
-        levelInfo['statement'] = info_json['level'][level]['statement'] 
+        levelInfo['name'] = info_json['level'][level]['name']
+        levelInfo['implication'] = info_json['level'][level]['implication']
+        levelInfo['statement'] = info_json['level'][level]['statement']
         return levelInfo
 
     levelInfo = selectInfoText(level)
     result['level'] = levelInfo
     print(result)
     return result
-

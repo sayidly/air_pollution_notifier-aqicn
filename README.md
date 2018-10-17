@@ -82,3 +82,22 @@ in Python 3.x:
 
 filename = input('Enter a file name: ')
 ```
+
+代码风格指南
+
+```
+pip install pycodestyle
+```
+
+runing 
+
+```
+pycodestyle filename.py
+```
+
+程序 autopep8 能自动将代码格式化 成 PEP 8 风格。用以下指令安装此程序：
+
+```
+pip install autopep8
+autopep8 --in-place optparse.py
+```
